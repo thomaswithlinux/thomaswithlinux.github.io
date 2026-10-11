@@ -1,0 +1,17 @@
+{
+  "name": "thomaswithlinux-portfolio",
+  "version": "1.3.0",
+  "description": "Portfolio de Thomas Letard — site statique (HTML, CSS, JavaScript natifs)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/validate.mjs",
+    "screenshots": "node scripts/capture-screenshots.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.49.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

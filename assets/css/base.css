@@ -1,0 +1,97 @@
+/* ==========================================================================
+   base.css — Design tokens, reset et typographie
+   --------------------------------------------------------------------------
+   Palette : gris anthracite chaud et or ambré (texte crème). Toutes les couleurs passent par des variables :
+   changer l'identité visuelle = modifier ce bloc :root.
+   ========================================================================== */
+
+:root {
+  /* Surfaces (du plus profond au plus élevé) */
+  --bg: #1e1e21;
+  --bg-2: #242427;
+  --surface: #2b2b2f;
+  --surface-2: #343439;
+
+  /* Traits */
+  --line: #3a3a3f;
+  --line-2: #4a4a51;
+
+  /* Texte */
+  --text: #f3f1ec;
+  --text-2: #bdbbb5;
+  --muted: #85837e;
+
+  /* Accents */
+  --accent: #f5b53f;            /* or ambré — accent principal */
+  --accent-2: #ffd479;          /* or clair — accent secondaire */
+  --accent-soft: rgba(245, 181, 63, .12);
+  --accent-2-soft: rgba(255, 212, 121, .14);
+  --ok: #3ddc97;
+  --warn: #e08a3c;
+
+  /* Dégradé signature */
+  --grad: linear-gradient(100deg, var(--accent) 0%, #f9c65a 40%, var(--accent-2) 100%);
+
+  /* Typographie */
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+
+  /* Formes & mouvement */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --ease: cubic-bezier(.22, .8, .24, 1);
+
+  /* Gabarits */
+  --sidebar-w: 264px;
+  --topbar-h: 58px;
+  --content-w: 1040px;
+}
+
+/* ---------- Reset minimal ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--topbar-h) + 24px); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+img, svg, canvas { display: block; max-width: 100%; }
+::selection { background: var(--accent); color: #1b1b1d; }
+
+/* Barres de défilement discrètes */
+* { scrollbar-width: thin; scrollbar-color: var(--line-2) transparent; }
+
+/* Focus clavier visible partout */
+:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; border-radius: 4px; }
+
+/* Lien d'évitement (accessibilité) */
+.skip-link {
+  position: fixed; left: 12px; top: -60px; z-index: 200;
+  background: var(--accent); color: #1b1b1d; padding: 8px 14px; border-radius: 8px; font-weight: 600;
+  transition: top .2s;
+}
+.skip-link:focus { top: 12px; }
+
+/* Utilitaires typographiques */
+.grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.prompt { color: var(--ok); font-family: var(--mono); }
+kbd {
+  font: 500 11px var(--mono); color: var(--text-2);
+  border: 1px solid var(--line-2); border-radius: 5px; padding: 1px 6px; background: var(--bg-2);
+}
+[hidden] { display: none !important; }
+
+/* Respect des préférences d'animation */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}

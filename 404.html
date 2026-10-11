@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>404 — Page introuvable</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <style>
+    main { min-height: 100vh; display: grid; place-content: center; gap: 18px; padding: 32px; text-align: left; max-width: 640px; margin: 0 auto; }
+    .code { font: 500 13px var(--mono); color: var(--accent); letter-spacing: .06em; }
+    h1 { font-size: clamp(34px, 7vw, 56px); line-height: 1.05; letter-spacing: -.03em; font-weight: 800; }
+    p { color: var(--text-2); }
+    pre { margin: 6px 0 0; padding: 16px 18px; border: 1px solid var(--line-2); border-radius: 12px; background: var(--surface); font: 13px/1.8 var(--mono); color: var(--text-2); overflow-x: auto; }
+    pre b { color: var(--ok); font-weight: 500; }
+    a.btn { justify-self: start; padding: 11px 20px; border-radius: 10px; background: var(--accent); color: #1b1b1d; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="code">ERREUR 404</span>
+    <h1>Cette page n'existe pas.</h1>
+    <p>Le lien est peut-être périmé, ou l'adresse mal saisie.</p>
+    <pre><b>visiteur@portfolio:~$</b> cd /page-demandee
+bash: cd: /page-demandee: Aucun fichier ou dossier de ce type</pre>
+    <a class="btn" href="/">Retour à l'accueil</a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thomas Letard — Systèmes, Réseaux & Automatisation</title>
+  <meta name="description" content="Portfolio de Thomas Letard, technicien supérieur systèmes et réseaux à Nouméa : projets, compétences et parcours en administration, supervision et automatisation.">
+  <meta name="theme-color" content="#1e1e21">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Aperçu lors d'un partage de lien -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thomas Letard — Systèmes, Réseaux & Automatisation">
+  <meta property="og:description" content="Technicien supérieur systèmes et réseaux : projets, compétences et parcours.">
+  <meta property="og:locale" content="fr_FR">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <!-- Polices : Inter (texte) + JetBrains Mono (code / interface) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Séquence de démarrage (une seule fois par session) -->
+  <div id="boot" class="boot" aria-hidden="true">
+    <pre id="boot-log" class="boot__log"></pre>
+    <span class="boot__hint">cliquer pour passer</span>
+  </div>
+
+  <!-- Décor -->
+  <canvas id="net" class="net" aria-hidden="true"></canvas>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <!-- Barre supérieure -->
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="menu-btn" aria-label="Ouvrir la navigation" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a class="brand" href="#hero" aria-label="Accueil">
+      <span class="brand__name" data-bind="profile.name"></span>
+    </a>
+    <button class="search" id="search-btn" aria-label="Ouvrir la palette de commandes">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span>Rechercher…</span>
+      <kbd>Ctrl K</kbd>
+    </button>
+    <nav class="topbar__links" aria-label="Liens externes">
+      <a data-href="profile.links.github" target="_blank" rel="noopener">GitHub</a>
+      <a data-href="profile.links.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </header>
+
+  <!-- Navigation latérale façon documentation -->
+  <aside class="sidebar" id="sidebar" aria-label="Navigation">
+    <nav>
+      <p class="sidebar__title">Présentation</p>
+      <a href="#hero" data-spy="hero">Accueil</a>
+      <a href="#about" data-spy="about">À propos</a>
+      <p class="sidebar__title">Technique</p>
+      <a href="#skills" data-spy="skills">Compétences</a>
+      <a href="#projects" data-spy="projects">Projets</a>
+      <a href="#archive" data-spy="archive">Dépôts</a>
+      <p class="sidebar__title">Parcours</p>
+      <a href="#experience" data-spy="experience">Expérience</a>
+      <a href="#education" data-spy="education">Formation</a>
+      <p class="sidebar__title">Échanger</p>
+      <a href="#contact" data-spy="contact">Contact</a>
+    </nav>
+    <div class="sidebar__status">
+      <span class="dot dot--ok"></span>
+      <span data-bind="profile.availability"></span>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__copy">
+        <p class="pill reveal"><span class="dot dot--ok"></span><span data-bind="profile.availability"></span></p>
+        <h1 class="hero__title reveal">
+          J'administre,<br>je supervise<br>et j'<span class="grad">automatise</span>.
+        </h1>
+        <p class="hero__roles reveal" aria-live="off">
+          <span class="prompt">~$</span> <span id="typed"></span><span class="caret"></span>
+        </p>
+        <p class="hero__lead reveal" id="hero-lead"></p>
+        <div class="hero__cta reveal">
+          <a class="btn btn--primary" href="#projects">Voir les projets
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn" href="#contact">Me contacter</a>
+          <a class="btn btn--ghost" id="cv-btn" data-href="profile.cv" hidden download>Télécharger le CV</a>
+        </div>
+        <dl class="stats reveal" id="stats"></dl>
+      </div>
+
+      <div class="hero__term reveal" aria-label="Terminal interactif">
+        <div class="term">
+          <div class="term__bar">
+            <span class="term__dots"><i></i><i></i><i></i></span>
+            <span class="term__title" id="term-title">portfolio — zsh</span>
+            <span class="term__tag">interactif</span>
+          </div>
+          <div class="term__body" id="term-body" role="log"></div>
+          <form class="term__form" id="term-form" autocomplete="off">
+            <label for="term-input" class="term__prompt" id="term-prompt"></label>
+            <input id="term-input" type="text" spellcheck="false" autocapitalize="off" placeholder="tapez « help »">
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ À PROPOS ============ -->
+    <section class="section" id="about">
+      <header class="section__head reveal">
+        <span class="eyebrow">01 / À propos</span>
+        <h2>Administrer, superviser, automatiser.</h2>
+      </header>
+      <div class="about">
+        <div class="about__text reveal" id="about-text"></div>
+        <dl class="facts reveal" id="facts"></dl>
+      </div>
+    </section>
+
+    <!-- ============ COMPÉTENCES ============ -->
+    <section class="section" id="skills">
+      <header class="section__head reveal">
+        <span class="eyebrow">02 / Compétences</span>
+        <h2>Des outils pratiqués sur le terrain.</h2>
+        <p class="section__sub">Le niveau reflète ma pratique réelle (alternance, projets, labs), pas une liste de mots-clés.</p>
+      </header>
+      <div class="skills" id="skills-grid"></div>
+      <ul class="chips reveal" id="toolbox" aria-label="Outils"></ul>
+    </section>
+
+    <!-- ============ PROJETS ============ -->
+    <section class="section" id="projects">
+      <header class="section__head reveal">
+        <span class="eyebrow">03 / Projets</span>
+        <h2>Ce que j'ai construit.</h2>
+        <p class="section__sub">Chaque projet est publié et documenté sur GitHub.</p>
+      </header>
+      <div class="filters reveal" id="project-filters" role="toolbar" aria-label="Filtrer les projets"></div>
+      <div class="cards" id="projects-grid"></div>
+    </section>
+
+    <!-- ============ ARCHIVE ============ -->
+    <section class="section" id="archive">
+      <header class="section__head reveal">
+        <span class="eyebrow">04 / Dépôts</span>
+        <h2>Dépôts GitHub.</h2>
+        <p class="section__sub">L'activité publique, classée comme une base de données technique.</p>
+      </header>
+      <div class="table reveal">
+        <div class="table__tools">
+          <input id="archive-search" type="search" placeholder="Filtrer par nom, type ou technologie…" aria-label="Filtrer l'archive">
+          <span class="table__count" id="archive-count"></span>
+        </div>
+        <div class="table__scroll">
+          <table>
+            <thead><tr><th>Date</th><th>Titre</th><th>Type</th><th>Tags</th></tr></thead>
+            <tbody id="archive-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPÉRIENCE ============ -->
+    <section class="section" id="experience">
+      <header class="section__head reveal">
+        <span class="eyebrow">05 / Expérience</span>
+        <h2>Parcours professionnel.</h2>
+      </header>
+      <ol class="timeline" id="xp-list"></ol>
+    </section>
+
+    <!-- ============ FORMATION ============ -->
+    <section class="section" id="education">
+      <header class="section__head reveal">
+        <span class="eyebrow">06 / Formation</span>
+        <h2>Études &amp; certifications.</h2>
+      </header>
+      <div class="edu">
+        <ol class="timeline" id="edu-list"></ol>
+        <div class="certs reveal" id="cert-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section--contact" id="contact">
+      <header class="section__head reveal">
+        <span class="eyebrow">07 / Contact</span>
+        <h2>Parlons de votre prochain défi.</h2>
+        <p class="section__sub">Une offre, un projet, une question technique : la réponse arrive vite.</p>
+      </header>
+      <div class="contact">
+        <form class="term contact__form reveal" id="contact-form">
+          <div class="term__bar">
+            <span class="term__dots"><i></i><i></i><i></i></span>
+            <span class="term__title">nouveau-message.sh</span>
+          </div>
+          <div class="contact__fields">
+            <label>Nom <input name="name" required autocomplete="name" placeholder="Votre nom"></label>
+            <label>E-mail <input name="email" type="email" required autocomplete="email" placeholder="vous@exemple.fr"></label>
+            <label>Message <textarea name="message" rows="5" required placeholder="Dites-moi tout…"></textarea></label>
+            <button class="btn btn--primary" type="submit">Envoyer via ma messagerie</button>
+            <p class="contact__hint">Ouvre votre application de messagerie avec le message prérempli — aucune donnée n'est stockée par ce site.</p>
+          </div>
+        </form>
+        <div class="contact__side reveal">
+          <button class="card-link" id="copy-mail" type="button">
+            <span class="card-link__k">E-mail</span>
+            <span class="card-link__v" data-bind="profile.email"></span>
+            <span class="card-link__a" id="copy-state">Copier</span>
+          </button>
+          <a class="card-link" data-href="profile.links.github" target="_blank" rel="noopener">
+            <span class="card-link__k">GitHub</span><span class="card-link__v">Code &amp; dépôts</span><span class="card-link__a">Ouvrir ↗</span>
+          </a>
+          <a class="card-link" data-href="profile.links.linkedin" target="_blank" rel="noopener">
+            <span class="card-link__k">LinkedIn</span><span class="card-link__v">Parcours &amp; réseau</span><span class="card-link__a">Ouvrir ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> <span data-bind="profile.name"></span></span>
+      <span class="footer__mid">Conçu à la main · HTML, CSS &amp; JavaScript — sans framework</span>
+      <a href="#hero">Haut de page ↑</a>
+    </footer>
+  </main>
+
+  <!-- Palette de commandes (Ctrl/⌘ + K) -->
+  <div class="palette" id="palette" hidden>
+    <div class="palette__box" role="dialog" aria-modal="true" aria-label="Palette de commandes">
+      <input id="palette-input" type="text" placeholder="Aller à une section, copier l'e-mail…" aria-label="Commande" autocomplete="off" spellcheck="false">
+      <ul id="palette-list" role="listbox"></ul>
+      <div class="palette__foot"><span>↑↓ naviguer</span><span>↵ valider</span><span>Échap fermer</span></div>
+    </div>
+  </div>
+
+  <noscript><p class="noscript">Ce portfolio utilise JavaScript pour afficher son contenu. Contact : <a href="mailto:thomasletard3@gmail.com">thomasletard3@gmail.com</a></p></noscript>
+
+  <!-- Scripts classiques (pas de modules) : le site fonctionne aussi en ouvrant index.html directement -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/render.js"></script>
+  <script src="assets/js/background.js"></script>
+  <script src="assets/js/terminal.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/boot.js"></script>
+</body>
+</html>
