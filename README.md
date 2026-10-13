@@ -1,55 +1,85 @@
-# Portfolio — Thomas Letard
+<p align="center">
+  <img src="docs/banner.svg" alt="thomaswithlinux.github.io" width="100%">
+</p>
 
-Portfolio personnel d'un **technicien supérieur systèmes & réseaux** (alternance TSSR, Nouméa) : parcours, compétences et projets d'infrastructure — supervision, automatisation, Linux.
-Site **statique** (HTML, CSS et JavaScript natifs), **sans framework ni étape de build**, hébergé sur GitHub Pages.
+# thomaswithlinux.github.io — *personal portfolio*
 
-**🌐 En ligne : <https://thomaswithlinux.github.io/>**
+![HTML5](https://img.shields.io/badge/HTML5-f5b53f?style=flat-square)
+![CSS3](https://img.shields.io/badge/CSS3-f5b53f?style=flat-square)
+![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-f5b53f?style=flat-square)
+![GitHub Pages](https://img.shields.io/badge/hosted%20on-GitHub%20Pages-f5b53f?style=flat-square)
+![License](https://img.shields.io/github/license/thomaswithlinux/thomaswithlinux.github.io?style=flat-square&color=f5b53f)
+![Last commit](https://img.shields.io/github/last-commit/thomaswithlinux/thomaswithlinux.github.io?style=flat-square&color=f5b53f)
 
-![Accueil du portfolio](docs/screenshots/01-accueil.png)
+Personal portfolio of a **systems & network technician** (TSSR work-study,
+Nouméa): career path, skills and infrastructure projects — supervision,
+automation, Linux. **Static** site (native HTML, CSS and JavaScript), **no
+framework and no build step**, hosted on GitHub Pages.
 
-> Les captures de ce dépôt sont **générées automatiquement** par GitHub Actions (voir [docs/screenshots](docs/screenshots/README.md)) : elles reflètent toujours la version publiée.
+**Live: <https://thomaswithlinux.github.io/>**
 
-## Fonctionnalités
+![Portfolio home](docs/screenshots/01-accueil.png)
+
+> The screenshots in this repository are **generated automatically** by GitHub
+> Actions (see [docs/screenshots](docs/screenshots/README.md)): they always
+> reflect the published version.
+
+## Table of contents
+
+- [Features](#features)
+- [Quick start](#quick-start)
+- [Customizing the content](#customizing-the-content)
+- [Tests and quality](#tests-and-quality)
+- [Deployment](#deployment)
+- [Documentation](#documentation)
+- [Project structure](#project-structure)
+- [Tech stack](#tech-stack)
+- [Known limitations](#known-limitations)
+- [License](#license)
+- [Author](#author)
+
+## Features
 
 | | |
 | --- | --- |
-| **Écran de démarrage** | Séquence façon boot Linux, jouée une fois par session, passable d'un clic ou d'une touche |
-| **Accueil** | Titre, texte qui s'écrit, statistiques animées et **terminal interactif** (`help`, `whoami`, `skills`, `projects`, `goto <section>`…) |
-| **Navigation façon documentation** | Barre latérale avec suivi de lecture (scrollspy), barre de progression, menu en tiroir sur mobile |
-| **Palette de commandes** | `Ctrl/⌘ + K` : aller à une section, copier l'e-mail, ouvrir GitHub/LinkedIn |
-| **Compétences** | Niveaux en 5 segments animés, par domaine (systèmes, réseaux & supervision, automatisation, cloud & IaC) |
-| **Projets** | Cartes filtrables par catégorie, halo lumineux qui suit la souris, liens vers les dépôts |
-| **Dépôts GitHub** | Tableau filtrable et trié par date, avec badges par type |
-| **Parcours** | Frise de l'expérience et de la formation, certifications (obtenues, en cours, planifiées) |
-| **Contact** | Copie de l'e-mail en un clic, formulaire qui prépare un `mailto:` (aucune donnée stockée) |
-| **Fond animé** | Réseau de nœuds en canvas réagissant au curseur, suspendu quand l'onglet est caché |
-| **Accessibilité** | Lien d'évitement, focus visible, sémantique HTML, `prefers-reduced-motion` respecté |
-| **Qualité** | Validation automatique du contenu et du code à chaque push, page 404 dédiée |
+| **Boot screen** | Linux-style boot sequence, played once per session, skippable with a click or a key |
+| **Home** | Title, typing text, animated statistics and an **interactive terminal** (`help`, `whoami`, `skills`, `projects`, `goto <section>`…) |
+| **Documentation-style navigation** | Sidebar with reading tracking (scrollspy), progress bar, drawer menu on mobile |
+| **Command palette** | `Ctrl/⌘ + K`: jump to a section, copy the e-mail, open GitHub/LinkedIn |
+| **Skills** | Animated 5-segment levels, by domain (systems, networks & supervision, automation, cloud & IaC) |
+| **Projects** | Cards filterable by category, glow that follows the mouse, links to the repositories |
+| **GitHub repositories** | Filterable table sorted by date, with badges per type |
+| **Career path** | Timeline of experience and education, certifications (obtained, in progress, planned) |
+| **Contact** | One-click e-mail copy, form that prepares a `mailto:` (no data stored) |
+| **Animated background** | Canvas node network reacting to the cursor, paused when the tab is hidden |
+| **Accessibility** | Skip link, visible focus, semantic HTML, `prefers-reduced-motion` respected |
+| **Quality** | Automatic validation of the content and the code on every push, dedicated 404 page |
 
 <table>
 <tr>
-<td><img src="docs/screenshots/02-terminal-interactif.png" alt="Terminal interactif"><br><sub>Terminal interactif</sub></td>
-<td><img src="docs/screenshots/10-palette-commandes.png" alt="Palette de commandes"><br><sub>Palette de commandes (Ctrl + K)</sub></td>
+<td><img src="docs/screenshots/02-terminal-interactif.png" alt="Interactive terminal"><br><sub>Interactive terminal</sub></td>
+<td><img src="docs/screenshots/10-palette-commandes.png" alt="Command palette"><br><sub>Command palette (Ctrl + K)</sub></td>
 </tr>
 <tr>
-<td><img src="docs/screenshots/04-competences.png" alt="Compétences"><br><sub>Compétences par domaine</sub></td>
-<td><img src="docs/screenshots/05-projets.png" alt="Projets"><br><sub>Projets filtrables</sub></td>
+<td><img src="docs/screenshots/04-competences.png" alt="Skills"><br><sub>Skills by domain</sub></td>
+<td><img src="docs/screenshots/05-projets.png" alt="Projects"><br><sub>Filterable projects</sub></td>
 </tr>
 <tr>
-<td><img src="docs/screenshots/06-depots-github.png" alt="Dépôts GitHub"><br><sub>Dépôts GitHub</sub></td>
-<td><img src="docs/screenshots/07-experience.png" alt="Expérience"><br><sub>Parcours professionnel</sub></td>
+<td><img src="docs/screenshots/06-depots-github.png" alt="GitHub repositories"><br><sub>GitHub repositories</sub></td>
+<td><img src="docs/screenshots/07-experience.png" alt="Experience"><br><sub>Professional path</sub></td>
 </tr>
 <tr>
-<td><img src="docs/screenshots/11-mobile.png" alt="Version mobile" width="260"><br><sub>Version mobile</sub></td>
-<td><img src="docs/screenshots/12-mobile-menu.png" alt="Menu mobile" width="260"><br><sub>Menu mobile</sub></td>
+<td><img src="docs/screenshots/11-mobile.png" alt="Mobile version" width="260"><br><sub>Mobile version</sub></td>
+<td><img src="docs/screenshots/12-mobile-menu.png" alt="Mobile menu" width="260"><br><sub>Mobile menu</sub></td>
 </tr>
 </table>
 
-Autres écrans : [à propos](docs/screenshots/03-a-propos.png) · [formation](docs/screenshots/08-formation.png) · [contact](docs/screenshots/09-contact.png)
+Other screens: [about](docs/screenshots/03-a-propos.png) · [education](docs/screenshots/08-formation.png) · [contact](docs/screenshots/09-contact.png)
 
-## Démarrage rapide
+## Quick start
 
-Aucune installation : le site fonctionne en ouvrant `index.html`. Pour le servir comme en production :
+No installation: the site works by opening `index.html`. To serve it as in
+production:
 
 ```bash
 git clone https://github.com/thomaswithlinux/thomaswithlinux.github.io.git
@@ -57,90 +87,115 @@ cd thomaswithlinux.github.io
 python -m http.server 8000
 ```
 
-Puis ouvrir <http://localhost:8000>. Sous Windows, `lancer-le-site.bat` démarre un serveur local et ouvre le navigateur.
+Then open <http://localhost:8000>. On Windows, `lancer-le-site.bat` starts a
+local server and opens the browser.
 
-## Personnaliser le contenu
+## Customizing the content
 
-**Tout le contenu est dans un seul fichier : [`assets/js/data.js`](assets/js/data.js).** On y modifie le profil, les compétences, les projets, le parcours et les dépôts ; le HTML n'est jamais à toucher. Guide complet : **[docs/CONTENT-GUIDE.md](docs/CONTENT-GUIDE.md)**.
+**All the content lives in a single file: [`assets/js/data.js`](assets/js/data.js).**
+You edit the profile, skills, projects, career path and repositories there; the
+HTML never needs to be touched. Full guide:
+**[docs/CONTENT-GUIDE.md](docs/CONTENT-GUIDE.md)**.
 
-| Section | Clé dans `data.js` |
+| Section | Key in `data.js` |
 | --- | --- |
-| Identité, liens, statistiques, bouton CV | `profile` |
-| À propos | `about` |
-| Compétences (niveau 1 à 5) | `skills`, `toolbox` |
-| Expérience | `experience` |
-| Projets | `projects` |
-| Dépôts / write-ups | `archive` |
-| Formation, certifications | `education`, `certifications` |
+| Identity, links, statistics, résumé button | `profile` |
+| About | `about` |
+| Skills (level 1 to 5) | `skills`, `toolbox` |
+| Experience | `experience` |
+| Projects | `projects` |
+| Repositories / write-ups | `archive` |
+| Education, certifications | `education`, `certifications` |
 
-## Tests et qualité
+## Tests and quality
 
 ```bash
-node tests/validate.mjs        # ou : npm test
+node tests/validate.mjs        # or: npm test
 ```
 
-La validation (Node ≥ 20, aucune dépendance) contrôle :
+The validation (Node ≥ 20, no dependency) checks:
 
-- la **syntaxe** de chaque script JavaScript ;
-- le **contenu** : champs obligatoires, niveaux de 1 à 5, identifiants de projets uniques, URLs en `https`, dates `AAAA-MM-JJ`, types d'archive connus ;
-- la **cohérence** : chaque donnée référencée par le HTML existe, chaque `#id` utilisé par les scripts est présent dans la page, chaque fichier `assets/` référencé existe.
+- the **syntax** of every JavaScript script;
+- the **content**: required fields, levels from 1 to 5, unique project
+  identifiers, `https` URLs, `YYYY-MM-DD` dates, known archive types;
+- the **consistency**: every piece of data referenced by the HTML exists, every
+  `#id` used by the scripts is present in the page, every referenced `assets/`
+  file exists.
 
-Elle tourne à chaque push et **bloque le déploiement** en cas d'erreur.
+It runs on every push and **blocks the deployment** on error.
 
-## Déploiement
+## Deployment
 
-Le site est publié par [GitHub Actions](.github/workflows/pages.yml) à chaque push sur `main` : validation, puis publication des seuls fichiers du site (`index.html`, `404.html`, `assets/`). Mise en route et domaine personnalisé : **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**.
+The site is published by [GitHub Actions](.github/workflows/pages.yml) on every
+push to `main`: validation, then publication of the site files only
+(`index.html`, `404.html`, `assets/`). Setup and custom domain:
+**[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**.
 
 ## Documentation
 
-| Document | Contenu |
+| Document | Content |
 | --- | --- |
-| [docs/UTILISATION.md](docs/UTILISATION.md) | Ce que le visiteur peut faire : navigation, terminal, raccourcis |
-| [docs/CONTENT-GUIDE.md](docs/CONTENT-GUIDE.md) | Modifier chaque section, ajouter une section ou une commande |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Fonctionnement, ordre des scripts, performance, accessibilité |
-| [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | Couleurs, typographie, composants, mouvement |
-| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | GitHub Pages pas à pas, domaine personnalisé |
-| [docs/DECISIONS.md](docs/DECISIONS.md) | Le « pourquoi » de chaque choix |
-| [docs/screenshots](docs/screenshots/README.md) | Captures d'écran et leur génération |
-| [SECURITY.md](SECURITY.md) | Confidentialité, mesures de sécurité, signalement |
-| [CHANGELOG.md](CHANGELOG.md) | Historique des versions |
+| [docs/UTILISATION.md](docs/UTILISATION.md) | What the visitor can do: navigation, terminal, shortcuts |
+| [docs/CONTENT-GUIDE.md](docs/CONTENT-GUIDE.md) | Edit each section, add a section or a command |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | How it works, script order, performance, accessibility |
+| [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | Colors, typography, components, motion |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | GitHub Pages step by step, custom domain |
+| [docs/DECISIONS.md](docs/DECISIONS.md) | The "why" behind each choice |
+| [docs/screenshots](docs/screenshots/README.md) | Screenshots and how they are generated |
+| [SECURITY.md](SECURITY.md) | Privacy, security measures, reporting |
+| [CHANGELOG.md](CHANGELOG.md) | Version history |
 
-## Structure du dépôt
+> The detailed documentation in `docs/` is written in French.
+
+## Project structure
 
 ```text
-index.html                    page principale (structure et conteneurs)
-404.html                      page d'erreur
+index.html                    main page (structure and containers)
+404.html                      error page
 assets/
 ├── css/
-│   ├── base.css              variables (couleurs, polices), reset, typographie
-│   ├── layout.css            barre du haut, menu latéral, sections, accueil, responsive
-│   └── components.css        boutons, terminal, cartes, tableau, frise, palette…
+│   ├── base.css              variables (colors, fonts), reset, typography
+│   ├── layout.css            top bar, side menu, sections, home, responsive
+│   └── components.css        buttons, terminal, cards, table, timeline, palette…
 ├── js/
-│   ├── data.js               ★ contenu du site (le seul fichier à éditer)
-│   ├── core.js               utilitaires partagés (DOM, icônes, préférences)
-│   ├── render.js             construit les sections à partir de data.js
-│   ├── background.js         réseau de nœuds animé (canvas)
-│   ├── terminal.js           terminal interactif
+│   ├── data.js               ★ site content (the only file to edit)
+│   ├── core.js               shared utilities (DOM, icons, preferences)
+│   ├── render.js             builds the sections from data.js
+│   ├── background.js         animated node network (canvas)
+│   ├── terminal.js           interactive terminal
 │   ├── ui.js                 interactions (scroll, palette, contact…)
-│   └── boot.js               écran de démarrage
+│   └── boot.js               boot screen
 └── img/favicon.svg
-docs/                         documentation et captures d'écran
-tests/                        validation du contenu et des scripts
-scripts/                      captures d'écran (Playwright), serveur local Windows
-.github/workflows/            déploiement Pages, génération des captures
+docs/                         documentation, screenshots and README banner
+tests/                        validation of the content and the scripts
+scripts/                      screenshots (Playwright), Windows local server
+.github/workflows/            Pages deployment, screenshot generation
 ```
 
-## Technologies
+## Tech stack
 
-HTML5 · CSS3 (variables, grid, `backdrop-filter`) · JavaScript ES2020 sans module ni dépendance · Polices [Inter](https://fonts.google.com/specimen/Inter) et [JetBrains Mono](https://www.jetbrains.com/lp/mono/) (SIL Open Font License 1.1) · GitHub Actions · Playwright (captures uniquement).
+HTML5 · CSS3 (variables, grid, `backdrop-filter`) · JavaScript ES2020 with no
+module and no dependency · [Inter](https://fonts.google.com/specimen/Inter) and
+[JetBrains Mono](https://www.jetbrains.com/lp/mono/) fonts (SIL Open Font
+License 1.1) · GitHub Actions · Playwright (screenshots only).
 
-## Limites connues
+## Known limitations
 
-- Le contenu est rendu par JavaScript : sans JS, seul un message de contact s'affiche. Les balises `og:` statiques assurent les aperçus de liens.
-- Le formulaire de contact dépend d'un client de messagerie configuré chez le visiteur (le bouton « Copier » sert de repli).
-- Les polices viennent de Google Fonts (voir [SECURITY.md](SECURITY.md) pour l'alternative auto-hébergée).
-- Thème sombre uniquement.
+- The content is rendered by JavaScript: without JS, only a contact message is
+  displayed. Static `og:` tags provide link previews.
+- The contact form relies on a mail client configured on the visitor's side
+  (the "Copy" button is the fallback).
+- Fonts come from Google Fonts (see [SECURITY.md](SECURITY.md) for the
+  self-hosted alternative).
+- Dark theme only.
 
-## Licence
+## License
 
-Aucune licence n'est fournie pour le moment : **tous droits réservés** sur le code et le contenu (textes, parcours, identité). Le dépôt est public pour consultation. Le propriétaire peut ajouter une licence (par exemple MIT pour le code) en créant un fichier `LICENSE`.
+The **code** is released under the **MIT** license — see the
+[LICENSE](LICENSE) file. The personal **content** (texts, career path,
+identity) remains © Thomas Letard, all rights reserved.
+
+## Author
+
+**Thomas Letard** — [@thomaswithlinux](https://github.com/thomaswithlinux) ·
+[Portfolio](https://thomaswithlinux.github.io/)
