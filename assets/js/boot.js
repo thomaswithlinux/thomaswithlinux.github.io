@@ -13,10 +13,10 @@
   const log = $('#boot-log');
 
   const LINES = [
-    ['[  OK  ]', 'ok', 'Initialisation du portfolio'],
-    ['[  OK  ]', 'ok', 'Chargement des modules : réseau, sécurité, systèmes'],
+    ['[  OK  ]', 'ok', 'Montage des systèmes de fichiers'],
+    ['[  OK  ]', 'ok', 'systemd : démarrage des services (network, sshd, zabbix-agent)'],
     ['[  OK  ]', 'ok', 'Segmentation des VLAN'],
-    ['[  OK  ]', 'ok', 'Pare-feu actif — politique : deny all'],
+    ['[  OK  ]', 'ok', 'Pare-feu actif (nftables) — politique : deny all'],
     ['[ INFO ]', 'hl', `Session ouverte : ${D.profile.name}`]
   ];
 

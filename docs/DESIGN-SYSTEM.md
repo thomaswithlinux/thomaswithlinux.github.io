@@ -8,8 +8,8 @@ Un portfolio qui montre de l'**implication** : sobre, précis, technique. On év
 
 | Référence | Apport |
 | --- | --- |
-| Exploit-DB | Palette sombre + rouge-orangé, tableau dense, vocabulaire de base de vulnérabilités |
-| CrowdSec | Violet/indigo en second accent, dégradés doux, halos lumineux |
+| Exploit-DB | Fond sombre, tableau dense, vocabulaire de base de vulnérabilités |
+| CrowdSec | Violet/indigo comme accent principal, dégradés doux, halos lumineux |
 | Aura (network-engineer) / Walana | Hero très typographique, pastille de statut, esprit futuriste mais épuré |
 | Documentation d'API | Barre latérale de navigation, palette de recherche, hiérarchie claire, blocs de code |
 
@@ -19,28 +19,29 @@ Toutes définies dans `assets/css/base.css` (`:root`).
 
 | Variable | Valeur | Usage |
 | --- | --- | --- |
-| `--bg` | `#1e1e21` | Fond de page |
-| `--bg-2` | `#242427` | Fond secondaire (en-têtes de tableau, champs) |
-| `--surface` | `#2b2b2f` | Cartes |
-| `--surface-2` | `#343439` | Survol, éléments élevés |
-| `--line` / `--line-2` | `#3a3a3f` / `#4a4a51` | Bordures |
-| `--text` | `#f3f1ec` | Texte principal |
-| `--text-2` | `#bdbbb5` | Texte secondaire |
-| `--muted` | `#85837e` | Métadonnées |
-| `--accent` | `#f5b53f` | Or ambré : actions, repères, éléments actifs |
-| `--accent-2` | `#ffd479` | Or clair : focus, liens du terminal, tags secondaires |
-| `--ok` | `#3ddc97` | Statut disponible, succès |
-| `--warn` | `#e08a3c` | Veille, « en préparation » |
+| `--bg` | `#15151c` | Fond de page |
+| `--bg-2` | `#1b1b24` | Fond secondaire (en-têtes de tableau, champs) |
+| `--surface` | `#22222d` | Cartes |
+| `--surface-2` | `#2b2b38` | Survol, éléments élevés |
+| `--line` / `--line-2` | `#33333f` / `#434353` | Bordures |
+| `--text` | `#f2f1f8` | Texte principal |
+| `--text-2` | `#b8b6c9` | Texte secondaire |
+| `--muted` | `#817f93` | Métadonnées |
+| `--accent` | `#9d86ff` | Violet : actions, repères, éléments actifs |
+| `--accent-2` | `#c4aeff` | Lavande : focus, liens du terminal, tags secondaires |
+| `--on-accent` | `#15151c` | Texte posé sur un fond accentué |
+| `--ok` | `#4ade9b` | Statut disponible, succès |
+| `--warn` | `#8ab4ff` | Veille, « en cours / planifié » |
 
-**Règle d'usage :** l'or ambré est l'accent dominant ; l'or clair reste rare. Le texte posé sur fond or est sombre (`#1b1b1d`) pour garder le contraste. Le dégradé `--grad` n'est utilisé que sur un mot du titre, la barre de progression et les barres de compétence.
+**Règle d'usage :** le violet est l'accent dominant ; la lavande reste rare. Le texte posé sur fond violet est sombre (`--on-accent`) pour garder le contraste. Le dégradé `--grad` n'est utilisé que sur un mot du titre, la barre de progression et les barres de compétence.
 
-Palette actuelle : gris anthracite chaud + or ambré, d'après l'image de référence fournie (v1.2.0). Changer toute l'identité : modifier `--accent` et `--accent-2`, ainsi que les valeurs RVB codées dans `layout.css`, `components.css` et `background.js`. Les valeurs RVB du canvas sont dans `background.js` (`COLORS`).
+Palette actuelle : ardoise violacée + violet/indigo (v1.2.0). Changer toute l'identité : modifier `--accent` et `--accent-2`, ainsi que les valeurs RVB codées dans `layout.css`, `components.css` et `background.js`. Les valeurs RVB du canvas sont dans `background.js` (`COLORS`).
 
 ## Typographie
 
-- **Inter** (400–800) : titres et texte courant. Titres en `letter-spacing` négatif (−0,025 à −0,035 em) pour un rendu serré.
+- **Space Grotesk** (400–700) : titres et texte courant. Titres en `letter-spacing` négatif (−0,02 à −0,03 em) pour un rendu serré.
 - **JetBrains Mono** (400–600) : tout ce qui est « donnée » — étiquettes, dates, tags, terminal, boutons de filtre.
-- Tailles de titre fluides avec `clamp()` (ex. hero : `clamp(36px, 5.2vw, 62px)`).
+- Tailles de titre fluides avec `clamp()` (ex. hero : `clamp(34px, 5vw, 58px)`).
 
 ## Espacement et formes
 

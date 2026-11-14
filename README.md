@@ -4,14 +4,14 @@
 
 # thomaswithlinux.github.io — *personal portfolio*
 
-![HTML5](https://img.shields.io/badge/HTML5-f5b53f?style=flat-square)
-![CSS3](https://img.shields.io/badge/CSS3-f5b53f?style=flat-square)
-![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-f5b53f?style=flat-square)
-![GitHub Pages](https://img.shields.io/badge/hosted%20on-GitHub%20Pages-f5b53f?style=flat-square)
-![License](https://img.shields.io/github/license/thomaswithlinux/thomaswithlinux.github.io?style=flat-square&color=f5b53f)
-![Last commit](https://img.shields.io/github/last-commit/thomaswithlinux/thomaswithlinux.github.io?style=flat-square&color=f5b53f)
+![HTML5](https://img.shields.io/badge/HTML5-9d86ff?style=flat-square)
+![CSS3](https://img.shields.io/badge/CSS3-9d86ff?style=flat-square)
+![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-9d86ff?style=flat-square)
+![GitHub Pages](https://img.shields.io/badge/hosted%20on-GitHub%20Pages-9d86ff?style=flat-square)
+![License](https://img.shields.io/github/license/thomaswithlinux/thomaswithlinux.github.io?style=flat-square&color=9d86ff)
+![Last commit](https://img.shields.io/github/last-commit/thomaswithlinux/thomaswithlinux.github.io?style=flat-square&color=9d86ff)
 
-Personal portfolio of a **systems & network technician** (TSSR work-study,
+Personal portfolio of a **Linux enthusiast** and **systems & network technician** (TSSR work-study,
 Nouméa): career path, skills and infrastructure projects — supervision,
 automation, Linux. **Static** site (native HTML, CSS and JavaScript), **no
 framework and no build step**, hosted on GitHub Pages.
@@ -46,7 +46,7 @@ framework and no build step**, hosted on GitHub Pages.
 | **Home** | Title, typing text, animated statistics and an **interactive terminal** (`help`, `whoami`, `skills`, `projects`, `goto <section>`…) |
 | **Documentation-style navigation** | Sidebar with reading tracking (scrollspy), progress bar, drawer menu on mobile |
 | **Command palette** | `Ctrl/⌘ + K`: jump to a section, copy the e-mail, open GitHub/LinkedIn |
-| **Skills** | Animated 5-segment levels, by domain (systems, networks & supervision, automation, cloud & IaC) |
+| **Skills** | Animated 5-segment levels, by domain (Linux, systems & virtualization, networks & supervision, automation & dev) |
 | **Projects** | Cards filterable by category, glow that follows the mouse, links to the repositories |
 | **GitHub repositories** | Filterable table sorted by date, with badges per type |
 | **Career path** | Timeline of experience and education, certifications (obtained, in progress, planned) |
@@ -175,7 +175,7 @@ scripts/                      screenshots (Playwright), Windows local server
 ## Tech stack
 
 HTML5 · CSS3 (variables, grid, `backdrop-filter`) · JavaScript ES2020 with no
-module and no dependency · [Inter](https://fonts.google.com/specimen/Inter) and
+module and no dependency · [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) and
 [JetBrains Mono](https://www.jetbrains.com/lp/mono/) fonts (SIL Open Font
 License 1.1) · GitHub Actions · Playwright (screenshots only).
 

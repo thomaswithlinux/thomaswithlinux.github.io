@@ -19,7 +19,7 @@
 
   const LINK_DIST = 150;        // distance max pour tracer un lien
   const MOUSE_RADIUS = 180;     // rayon d'influence du curseur
-  const COLORS = ['245,181,63', '255,212,121'];   // accent / accent-2 (RVB)
+  const COLORS = ['157,134,255', '196,174,255'];   // accent / accent-2 (RVB)
 
   let w = 0, h = 0, dpr = 1, nodes = [], raf = 0;
   const mouse = { x: -9999, y: -9999 };

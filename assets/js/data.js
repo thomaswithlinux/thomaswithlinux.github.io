@@ -14,13 +14,13 @@ window.PORTFOLIO = {
   profile: {
     name: "Thomas Letard",
     handle: "tletard",                       // utilisé dans le terminal (tletard@portfolio)
-    role: "Technicien Supérieur Systèmes & Réseaux",
+    role: "Linux & Systèmes — Technicien Supérieur Systèmes et Réseaux",
     // Phrases qui défilent sous le titre du hero
     roles: [
-      "Administration systèmes & réseaux",
+      "Linux, avant tout par passion",
+      "Administration RHEL & Debian",
       "Supervision : Zabbix, Nagios, Grafana",
-      "Linux & automatisation",
-      "Infrastructure as Code (Terraform)"
+      "Automatisation : Bash, Python, Ansible"
     ],
     location: "Nouméa, Nouvelle-Calédonie",
     availability: "Alternant TSSR chez Axians Nouvelle-Calédonie",
@@ -41,12 +41,14 @@ window.PORTFOLIO = {
   /* ---------- À propos ------------------------------------------------- */
   about: {
     paragraphs: [
-      "Technicien Systèmes et Réseaux en alternance chez Axians (TSSR, CCI Nouvelle-Calédonie), titulaire d'un Bac Pro Systèmes Numériques avec mention Très Bien et félicitations du jury.",
-      "Mon quotidien : virtualisation, supervision, téléphonie, gestion d'adresses IP et support. En parallèle, je transforme ce que je rencontre sur le terrain en outils — sauvegarde de switches, mises à jour automatiques, tableau de bord de supervision — que je publie et documente sur GitHub.",
-      "Je m'intéresse de près à Linux, à la cybersécurité et à l'Infrastructure as Code. Je prépare actuellement les certifications Linux Essentials, LFCS et Terraform Associate."
+      "Linux, c'est ma passion avant d'être mon métier : un terminal ouvert en permanence, des machines que je casse puis que je répare pour comprendre, et l'envie d'automatiser tout ce qui se répète. C'est de là que vient tout le reste.",
+      "Concrètement : administration RHEL et Debian/Ubuntu, services systemd, scripting shell, SSH et planification cron. Mes projets publics sont nés de ce réflexe — un script Bash de mises à jour multi-distributions, un outil Python de sauvegarde de switches, un tableau de bord de supervision livré avec Docker et un service systemd durci.",
+      "Côté professionnel, je suis Technicien Systèmes et Réseaux en alternance chez Axians (TSSR, CCI Nouvelle-Calédonie), titulaire d'un Bac Pro Systèmes Numériques avec mention Très Bien et félicitations du jury. Mon quotidien : virtualisation, supervision, téléphonie, gestion d'adresses IP et support.",
+      "Je continue de monter en compétence sur Linux et la cybersécurité, et je prépare les certifications LFCS et LPIC-1."
     ],
     facts: [
-      { k: "Focus", v: "Linux · Supervision · Automatisation" },
+      { k: "Passion", v: "Linux — RHEL, Debian, systemd, shell" },
+      { k: "Focus", v: "Administration · Supervision · Automatisation" },
       { k: "Localisation", v: "Nouméa, Nouvelle-Calédonie" },
       { k: "Langues", v: "Français (natif) · Anglais (IELTS B2)" },
       { k: "Hors écran", v: "Pêche & nature" }
@@ -55,10 +57,15 @@ window.PORTFOLIO = {
 
   /* ---------- Compétences (level = 1 à 5) ------------------------------ */
   skills: [
-    { group: "Systèmes", items: [
-      { name: "Linux (RHEL, Debian/Ubuntu)", level: 4 },
+    { group: "Linux", items: [
+      { name: "RHEL / Red Hat", level: 4 },
+      { name: "Debian / Ubuntu", level: 4 },
+      { name: "Shell, systemd & cron", level: 3 }
+    ]},
+    { group: "Systèmes & virtualisation", items: [
       { name: "Windows Server & Active Directory", level: 4 },
-      { name: "Virtualisation", level: 3 }
+      { name: "Virtualisation", level: 3 },
+      { name: "Docker", level: 2 }
     ]},
     { group: "Réseaux & supervision", items: [
       { name: "Supervision (Zabbix, Nagios, Grafana)", level: 3 },
@@ -68,18 +75,15 @@ window.PORTFOLIO = {
     { group: "Automatisation & dev", items: [
       { name: "Bash & PowerShell", level: 3 },
       { name: "Python (Netmiko, outils internes)", level: 3 },
-      { name: "Docker & Ansible", level: 2 }
-    ]},
-    { group: "Cloud & IaC", items: [
-      { name: "Terraform (en apprentissage)", level: 2 },
-      { name: "Git & GitHub Pages", level: 3 },
-      { name: "HTML, CSS & JavaScript", level: 3 }
+      { name: "Ansible", level: 2 },
+      { name: "Git, HTML / CSS / JavaScript", level: 3 }
     ]}
   ],
   // Outils affichés sous forme de « puces » (sans niveau)
   toolbox: [
-    "RHEL", "Linux", "Windows Server", "Active Directory", "Zabbix", "Nagios",
-    "Grafana", "3CX", "XiVO", "Docker", "Ansible", "Terraform", "Netmiko", "Git"
+    "Linux", "RHEL", "Debian", "Ubuntu", "systemd", "Bash", "SSH", "cron",
+    "Windows Server", "Active Directory", "Zabbix", "Nagios", "Grafana",
+    "3CX", "XiVO", "Docker", "Ansible", "Python", "Netmiko", "Git"
   ],
 
   /* ---------- Expérience ----------------------------------------------- */
@@ -94,7 +98,7 @@ window.PORTFOLIO = {
         "Téléphonie VoIP : 3CX, XiVO, Alcatel OXO.",
         "IPAM et support informatique."
       ],
-      tags: ["Supervision", "VoIP", "Virtualisation"]
+      tags: ["Linux", "Supervision", "VoIP", "Virtualisation"]
     },
     {
       period: "Janv. 2025",
@@ -180,7 +184,7 @@ window.PORTFOLIO = {
     {
       id: "maj-auto-linux",
       title: "maj-auto-linux",
-      category: "Automatisation",
+      category: "Linux",
       year: "2026",
       featured: false,
       summary: "Script Bash multi-distributions de mise à jour automatique des paquets (apt, dnf/yum, pacman, zypper, apk) : journaux horodatés, rapport envoyé par e-mail, verrou anti-exécution simultanée et purge des anciens logs. Prévu pour tourner la nuit avec cron.",
@@ -235,16 +239,15 @@ window.PORTFOLIO = {
     }
   ],
   certifications: [
-    { name: "IELTS — niveau B2", issuer: "LSI Auckland", year: "2025", status: "Obtenu" },
-    { name: "Linux Essentials (010-160)", issuer: "LPI", year: "2026", status: "En cours" },
-    { name: "LFCS — Certified System Administrator", issuer: "Linux Foundation", year: "fin 2026", status: "Planifiée" },
-    { name: "Terraform Associate", issuer: "HashiCorp", year: "début 2027", status: "Planifiée" }
+    { name: "LFCS — Linux Foundation Certified System Administrator", issuer: "Linux Foundation", year: "fin 2026", status: "En cours" },
+    { name: "LPIC-1 — Linux Administrator", issuer: "LPI", year: "2027", status: "Planifiée" },
+    { name: "IELTS — niveau B2", issuer: "LSI Auckland", year: "2025", status: "Obtenu" }
   ],
 
   /* ---------- Dépôts GitHub (section « archive », style Exploit-DB) ---- */
   archive: [
     { date: "2026-10-07", title: "vigilia — supervision de switches OmniSwitch", type: "Dépôt", tags: ["Python", "SQLite", "SSH"], url: "https://github.com/thomaswithlinux/vigilia" },
-    { date: "2026-10-05", title: "maj-auto-linux — mises à jour automatiques multi-distributions", type: "Dépôt", tags: ["Bash", "cron"], url: "https://github.com/thomaswithlinux/maj-auto-linux" },
+    { date: "2026-10-05", title: "maj-auto-linux — mises à jour automatiques multi-distributions", type: "Dépôt", tags: ["Bash", "Linux", "cron"], url: "https://github.com/thomaswithlinux/maj-auto-linux" },
     { date: "2026-09-28", title: "backup-config-ale-switch — sauvegarde des configurations OS6450", type: "Dépôt", tags: ["Python", "Netmiko"], url: "https://github.com/thomaswithlinux/backup-config-ale-switch" },
     { date: "2026-09-13", title: "portfolio2026 — portfolio personnel", type: "Dépôt", tags: ["JavaScript", "GitHub Pages"], url: "https://github.com/thomaswithlinux/portfolio2026" },
     { date: "2026-08-30", title: "formation-docker — support de formation Docker (fork)", type: "Formation", tags: ["Docker"], url: "https://github.com/thomaswithlinux/formation-docker" }
